@@ -1,8 +1,8 @@
 # documents
--
-.vscode 
+
+.vscode: 
 add to vscode for code's compile
 -
-.gittattributes
+.gittattributes:
 change display language on github's reposiyory
 -
