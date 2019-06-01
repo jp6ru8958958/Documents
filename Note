@@ -80,7 +80,7 @@
 	"Creat_Models":"
 		Edit -APPNAME- -> models.py
 			from django.db import models
-			class hello_models(models.Model):
+			class -MODELSNAME-(models.Model):
 			    Column1 = models.TextField(default="Colume1_df")
 			    Column2 = models.DateTimeField(auto_now=True)
 			    Column3 = models.DateTimeField(auto_now_add=True)
@@ -90,7 +90,23 @@
 			python manage.py makemigrations
 			python manage.py migrate
 		Open URL ->
-			https://sqliteonline.com/
+			https://inloop.github.io/sqlite-viewer/
 		"
+	"Admin_Site":"
+		Edit settings.py ->
+			[INSTALLED_APPS] add 'django.contrib.admin'
+		Edit urls.py ->
+			[urlpatterns] add url(r'^admin/', admin.site.urls)
+		Shell ->
+			python manage.py createsuperuser
+	"
+	"Register_Model":"
+		Edit -APPNAME- -> admin.py
+			from django.contrib import admin
+			from -APPNAME-.models import -MODELSNAME-
+			admin.site.register(MODELSNAME)
+
+
+	"
 }
 
