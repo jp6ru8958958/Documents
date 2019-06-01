@@ -1,0 +1,96 @@
+"Linux":{
+	"Error: That port is already in use.":"
+		Shell ->
+			sudo fuser -k 8000/tcp
+	"
+}
+
+"Json":{
+	"Test":"
+		Open URL ->
+			https://www.json.cn/
+	"
+}
+"Git":{
+	"Ignore_File":"
+		Shell ->
+			vim .gitignore
+			git rm -r --cached .
+			git add .
+	"
+	"Reset":"
+		Shell ->
+			git log
+			git reset --hard HEAD~ /2/3/4
+	"
+}
+"Django":{
+	"Creat_New_Project":"
+		Shell ->
+			django-admin startproject -PROJECTNAME-
+			cd django_demo 
+			python manage.py runserver
+	"
+	"Change_Language":"
+		Edit settings.py ->
+			LANGUAGE_CODE = 'zh-Hant'
+			TIME_ZONE = 'Asia/Taipei'
+		Shell ->
+			python manage.py syncdb
+	"
+	"Add_APPs":"
+		Shell ->
+			python manage.py startapp -APPNAME-
+		Edit settings.py ->
+			[INSTALLED_APPS] add -APPNAME-
+		Edit -APPNAME-A -> migrations -> views.py
+			from django.shortcuts import render
+			def hello_view(request):
+    				return render(request, 'hello_django.html', {
+        	!			'data': "Hello Django ",
+    				})
+	"
+	"Add_template":"
+		Shell ->
+			mkdir templates
+			cd templates
+			vim -NAME-.html
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+				    <meta charset="UTF-8">
+ 				    <title>Title</title>
+				</head>
+				<body>
+		!		    {{data}}
+				</body>
+				</html>
+	"
+	"URLSconf_Setting":"
+		Edit -PROJECTNAME- -> urls.py
+			from django.conf.urls import url
+			from django.contrib import admin
+			from -APPNAME-.views import hello_view
+
+			urlpatterns = [
+			    url(r'^admin/', admin.site.urls),
+			    url(r'^hello/', hello_view),
+			]
+	"
+	"Creat_Models":"
+		Edit -APPNAME- -> models.py
+			from django.db import models
+			class hello_models(models.Model):
+			    Column1 = models.TextField(default="Colume1_df")
+			    Column2 = models.DateTimeField(auto_now=True)
+			    Column3 = models.DateTimeField(auto_now_add=True)
+			    class Meta:
+			        db_table = "-APPNAME-"
+		Shell ->
+			python manage.py makemigrations
+			python manage.py migrate
+		Open URL ->
+			https://sqliteonline.com/
+		"
+}
+
