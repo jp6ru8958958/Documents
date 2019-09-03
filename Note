@@ -3,6 +3,10 @@
 		Shell ->
 			sudo fuser -k 8000/tcp
 	"
+	"Set default volume as now.":"
+		Shell ->
+			sudo alsactl store
+	"
 }
 
 "Json":{
