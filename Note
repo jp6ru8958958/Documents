@@ -7,6 +7,12 @@
 		Shell ->
 			sudo alsactl store
 	"
+	"Set keyboard brightness by shell":"
+		Shell ->
+			cd /sys/devices/platform/dell-laptop/leds/dell::kbd_backlight
+			sudo su
+			echo 2 > brightness
+	"
 }
 
 "Json":{
