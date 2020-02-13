@@ -33,6 +33,7 @@
 			git log
 			git reset --hard HEAD~ /2/3/4
 	"
+
 }
 "Django":{
 	"Creat_New_Project":"
